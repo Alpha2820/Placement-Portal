@@ -11,7 +11,10 @@ const app = express();
 // Middleware
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://your-frontend-url.vercel.app'] // We'll update this later
+    ? [
+        'https://placement-portal-bk43.onrender.com',
+        /\.vercel\.app$/  // Allow any Vercel domain
+      ]
     : 'http://localhost:3000',
   credentials: true
 }));
