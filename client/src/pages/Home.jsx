@@ -38,7 +38,7 @@ function Home() {
                     Register Now
                   </button>
                 </Link>
-                
+
                 <Link to="/admin-register">
                   <button className="w-64 bg-linear-to-r from-red-500 to-orange-600 text-white font-bold py-4 px-8 rounded-xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition duration-300">
                     🔐 Admin Sign Up
@@ -58,10 +58,15 @@ function Home() {
               </div>
             )}
 
-            <div className="mt-16">
+            <div className="mt-16 flex flex-col sm:flex-row gap-4 justify-center ">
               <Link to="/placements">
                 <button className="bg-linear-to-r from-orange-500 to-red-500 text-white font-bold py-4 px-10 rounded-xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition duration-300">
                   🎯 View All Placements
+                </button>
+              </Link>
+              <Link to="/company-visits">
+                <button className="bg-linear-to-r from-cyan-500 to-blue-500 text-white font-bold py-4 px-10 rounded-xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition duration-300">
+                  🏢 Company Visits
                 </button>
               </Link>
             </div>

@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
 
+
 // Load environment variables
 dotenv.config();
 
@@ -25,11 +26,13 @@ app.use(express.urlencoded({ extended: true }));
 const authRoutes = require('./routes/authRoutes');
 const placementRoutes = require('./routes/placementRoutes');
 const adminRoutes = require('./routes/adminRoutes');
+const companyVisitRoutes = require('./routes/companyVisitRoutes');
 
 // Use routes
 app.use('/api/auth', authRoutes);
 app.use('/api/placements', placementRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api/company-visits', companyVisitRoutes);
 
 
 

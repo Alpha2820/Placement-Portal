@@ -57,3 +57,30 @@ export const rejectPlacement = async (id) => {
   const response = await axios.put(`${API_URL}/admin/placements/${id}/reject`);
   return response.data;
 };
+
+// Company Visit APIs
+// Company Visit APIs
+export const addCompanyVisit = async (visitData) => {
+  const response = await axios.post(`${API_URL}/company-visits`, visitData);
+  return response.data;
+};
+
+export const getAllCompanyVisits = async () => {
+  const response = await axios.get(`${API_URL}/company-visits`);
+  return response.data;
+};
+
+export const updateCompanyVisit = async (id, visitData) => {
+  const response = await axios.put(`${API_URL}/company-visits/${id}`, visitData);
+  return response.data;
+};
+
+export const deleteCompanyVisit = async (id) => {
+  const response = await axios.delete(`${API_URL}/company-visits/${id}`);
+  return response.data;
+};
+
+export const archiveCompanyVisit = async (id) => {
+  const response = await axios.put(`${API_URL}/company-visits/${id}/archive`);
+  return response.data;
+};

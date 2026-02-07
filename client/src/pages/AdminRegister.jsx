@@ -40,12 +40,12 @@ function AdminRegister() {
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 py-12">
-      <div className="absolute inset-0 bg-gradient-to-br from-red-600 via-orange-600 to-yellow-500 opacity-90"></div>
+      <div className="absolute inset-0 bg-linear-to-br from-red-600 via-orange-600 to-yellow-500 opacity-90"></div>
       
       <div className="relative w-full max-w-2xl">
         <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-10">
           <div className="text-center mb-8">
-            <h2 className="text-4xl font-bold bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl font-bold bg-linear-to-r from-red-600 to-orange-600 bg-clip-text text-transparent">
               Admin Registration
             </h2>
             <p className="text-gray-600 mt-2">Create an admin account with secret code</p>
@@ -159,7 +159,7 @@ function AdminRegister() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-gradient-to-r from-red-600 to-orange-600 text-white font-bold py-4 px-6 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+              className="w-full bg-linear-to-r from-red-600 to-orange-600 text-white font-bold py-4 px-6 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
             >
               {loading ? 'Creating Admin Account...' : 'Create Admin Account'}
             </button>
