@@ -87,3 +87,54 @@ exports.login = async (req, res) => {
     res.status(500).json({ message: 'Server error during login' });
   }
 };
+// Register new admin with secret code
+exports.registerAdmin = async (req, res) => {
+  try {
+    const { name, email, password, rollNumber, batch, adminSecret } = req.body;
+
+    // Check admin secret code
+    const ADMIN_SECRET = process.env.ADMIN_SECRET || 'your-super-secret-admin-code-2025';
+    
+    if (adminSecret !== ADMIN_SECRET) {
+      return res.status(403).json({ 
+        message: 'Invalid admin secret code' 
+      });
+    }
+
+    // Check if user already exists
+    const existingUser = await User.findOne({ 
+      $or: [{ email }, { rollNumber }] 
+    });
+
+    if (existingUser) {
+      return res.status(400).json({ 
+        message: 'User with this email or roll number already exists' 
+      });
+    }
+
+    // Hash password
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    // Create new admin user
+    const user = new User({
+      name,
+      email,
+      password: hashedPassword,
+      rollNumber,
+      batch,
+      role: 'admin',  // Set role as admin
+      verified: true  // Auto-verify admins
+    });
+
+    await user.save();
+
+    res.status(201).json({ 
+      message: 'Admin registered successfully',
+      userId: user._id 
+    });
+
+  } catch (error) {
+    console.error('Admin registration error:', error);
+    res.status(500).json({ message: 'Server error during registration' });
+  }
+};

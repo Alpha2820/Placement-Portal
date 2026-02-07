@@ -6,6 +6,7 @@ import Register from './pages/Register';
 import AdminDashboard from './pages/AdminDashboard';
 import StudentDashboard from './pages/StudentDashboard';
 import Placements from './pages/Placement';
+import AdminRegister from './pages/AdminRegister';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/dashboard" element={<StudentDashboard />} />
           <Route path="/placements" element={<Placements />} />
+          <Route path="/admin-register" element={<AdminRegister />} />
         </Routes>
       </Router>
     </AuthProvider>

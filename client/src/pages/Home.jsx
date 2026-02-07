@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
-import { useContext } from 'react';
-import { AuthContext } from '../context/AuthContext';
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 function Home() {
   const { user } = useContext(AuthContext);
@@ -11,7 +11,7 @@ function Home() {
       <div className="relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-linear-to-br from-blue-600 via-purple-600 to-pink-500 opacity-90"></div>
-        
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="text-center">
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in">
@@ -20,7 +20,7 @@ function Home() {
                 Placement Portal
               </span>
             </h1>
-            
+
             <p className="text-xl md:text-2xl text-blue-100 mb-12 max-w-3xl mx-auto">
               Share your placement success stories and inspire your juniors 🚀
             </p>
@@ -32,10 +32,16 @@ function Home() {
                     Login
                   </button>
                 </Link>
-                
+
                 <Link to="/register">
                   <button className="w-64 bg-linear-to-r from-green-500 to-emerald-600 text-white font-bold py-4 px-8 rounded-xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition duration-300">
                     Register Now
+                  </button>
+                </Link>
+                
+                <Link to="/admin-register">
+                  <button className="w-64 bg-linear-to-r from-red-500 to-orange-600 text-white font-bold py-4 px-8 rounded-xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition duration-300">
+                    🔐 Admin Sign Up
                   </button>
                 </Link>
               </div>
@@ -44,7 +50,7 @@ function Home() {
                 <p className="text-2xl text-white font-semibold mb-6">
                   Welcome back, {user.name}! 👋
                 </p>
-                <Link to={user.role === 'admin' ? '/admin' : '/dashboard'}>
+                <Link to={user.role === "admin" ? "/admin" : "/dashboard"}>
                   <button className="w-64 bg-white text-blue-600 font-bold py-4 px-8 rounded-xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition duration-300">
                     Go to Dashboard
                   </button>
@@ -69,19 +75,24 @@ function Home() {
           <h2 className="text-4xl font-bold text-center mb-16 text-gray-800">
             Why Use Our Platform?
           </h2>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-linear-to-br from-blue-50 to-blue-100 p-8 rounded-2xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
               <div className="text-5xl mb-4">📊</div>
-              <h3 className="text-2xl font-bold mb-3 text-gray-800">Track Success</h3>
+              <h3 className="text-2xl font-bold mb-3 text-gray-800">
+                Track Success
+              </h3>
               <p className="text-gray-600">
-                View verified placement records with package details and company information
+                View verified placement records with package details and company
+                information
               </p>
             </div>
 
             <div className="bg-linear-to-br from-purple-50 to-purple-100 p-8 rounded-2xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
               <div className="text-5xl mb-4">💡</div>
-              <h3 className="text-2xl font-bold mb-3 text-gray-800">Learn & Prepare</h3>
+              <h3 className="text-2xl font-bold mb-3 text-gray-800">
+                Learn & Prepare
+              </h3>
               <p className="text-gray-600">
                 Read interview experiences and tips from students who got placed
               </p>
@@ -89,7 +100,9 @@ function Home() {
 
             <div className="bg-linear-to-br from-pink-50 to-pink-100 p-8 rounded-2xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
               <div className="text-5xl mb-4">🎓</div>
-              <h3 className="text-2xl font-bold mb-3 text-gray-800">Share Your Story</h3>
+              <h3 className="text-2xl font-bold mb-3 text-gray-800">
+                Share Your Story
+              </h3>
               <p className="text-gray-600">
                 Help juniors by sharing your placement journey and success story
               </p>
