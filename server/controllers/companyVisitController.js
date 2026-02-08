@@ -3,11 +3,12 @@ const CompanyVisit = require('../models/CompanyVisit');
 // Add new company visit (Admin only)
 exports.addCompanyVisit = async (req, res) => {
   try {
-    const { companyName, rolesOffered, packageRange, eligibilityCriteria, jobDescription, batch } = req.body;
+    const { companyName, location, rolesOffered, packageRange, eligibilityCriteria, jobDescription, batch } = req.body;
     const adminId = req.user.userId;
 
     const companyVisit = new CompanyVisit({
       companyName,
+      location,
       rolesOffered,
       packageRange,
       eligibilityCriteria,
