@@ -9,6 +9,8 @@ import Placements from './pages/Placement';
 import AdminRegister from './pages/AdminRegister';
 import CompanyVisits from './pages/CompanyVisits';
 import AdminCompanyVisits from './pages/AdminCompanyVisits';
+import DashboardOverview from './pages/DashboardOverview';
+import Profile from './pages/Profile';
 
 function App() {
   return (
@@ -19,11 +21,18 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/admin" element={<AdminDashboard />} />
-          <Route path="/dashboard" element={<StudentDashboard />} />
-          <Route path="/placements" element={<Placements />} />
           <Route path="/admin-register" element={<AdminRegister />} />
-          <Route path="/company-visits" element={<CompanyVisits />} />
+
           <Route path="/admin/company-visits" element={<AdminCompanyVisits />} />
+
+          <Route path="/dashboard" element={<DashboardOverview />} />
+          <Route path="/dashboard/submit" element={<StudentDashboard />} />
+          <Route path="/dashboard/my-placements" element={<StudentDashboard />} />
+          <Route path="/dashboard/profile" element={<Profile />} />
+
+          <Route path="/placements" element={<Placements />} />
+          <Route path="/company-visits" element={<CompanyVisits />} />
+
 
         </Routes>
       </Router>
