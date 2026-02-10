@@ -59,7 +59,6 @@ export const rejectPlacement = async (id) => {
 };
 
 // Company Visit APIs
-// Company Visit APIs
 export const addCompanyVisit = async (visitData) => {
   const response = await axios.post(`${API_URL}/company-visits`, visitData);
   return response.data;

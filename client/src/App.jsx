@@ -11,6 +11,8 @@ import CompanyVisits from './pages/CompanyVisits';
 import AdminCompanyVisits from './pages/AdminCompanyVisits';
 import DashboardOverview from './pages/DashboardOverview';
 import Profile from './pages/Profile';
+import PlacementDetail from './pages/PlacementDetail';
+
 
 function App() {
   return (
@@ -22,7 +24,6 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/admin-register" element={<AdminRegister />} />
-
           <Route path="/admin/company-visits" element={<AdminCompanyVisits />} />
 
           <Route path="/dashboard" element={<DashboardOverview />} />
@@ -31,6 +32,7 @@ function App() {
           <Route path="/dashboard/profile" element={<Profile />} />
 
           <Route path="/placements" element={<Placements />} />
+          <Route path="/placement/:id" element={<PlacementDetail />} />
           <Route path="/company-visits" element={<CompanyVisits />} />
 
 
