@@ -59,7 +59,7 @@ function PlacementDetail() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 to-slate-800">
+      <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-slate-900 to-slate-800">
         <div className="text-center">
           <div className="inline-block animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-500"></div>
           <p className="mt-4 text-white font-semibold">
@@ -72,7 +72,7 @@ function PlacementDetail() {
 
   if (!placement) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 to-slate-800">
+      <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-slate-900 to-slate-800">
         <div className="text-center">
           <div className="text-6xl mb-4">😕</div>
           <p className="text-white text-xl font-semibold mb-4">
@@ -89,7 +89,7 @@ function PlacementDetail() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <div className="min-h-screen bg-linear-to-br from-slate-900 via-slate-800 to-slate-900">
       {/* Header with Breadcrumbs */}
       <div className="bg-slate-800 border-b border-slate-700 shadow-2xl sticky top-0 z-40">
         <div className="max-w-5xl mx-auto px-6 py-4">
@@ -125,7 +125,7 @@ function PlacementDetail() {
 
       <div className="max-w-5xl mx-auto px-6 py-12">
         {/* Hero Section */}
-        <div className="bg-gradient-to-br from-blue-600 to-purple-700 rounded-3xl p-12 mb-8 shadow-2xl relative overflow-hidden">
+        <div className="bg-linear-to-br from-blue-600 to-purple-700 rounded-3xl p-12 mb-8 shadow-2xl relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-10 rounded-full -mr-32 -mt-32"></div>
           <div className="absolute bottom-0 left-0 w-48 h-48 bg-white opacity-10 rounded-full -ml-24 -mb-24"></div>
 
@@ -354,7 +354,7 @@ function PlacementDetail() {
         {/* Bottom Navigation */}
         <div className="mt-12 flex justify-center">
           <Link to="/placements">
-            <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold rounded-xl shadow-lg transition">
+            <button className="px-8 py-4 bg-linear-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold rounded-xl shadow-lg transition">
               ← View All Placements
             </button>
           </Link>

@@ -13,7 +13,6 @@ import DashboardOverview from './pages/DashboardOverview';
 import Profile from './pages/Profile';
 import PlacementDetail from './pages/PlacementDetail';
 
-
 function App() {
   return (
     <AuthProvider>
