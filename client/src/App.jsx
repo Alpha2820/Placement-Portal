@@ -12,6 +12,7 @@ import AdminCompanyVisits from './pages/AdminCompanyVisits';
 import DashboardOverview from './pages/DashboardOverview';
 import Profile from './pages/Profile';
 import PlacementDetail from './pages/PlacementDetail';
+import CompanyVisitDetail from './pages/CompanyVisitDetail';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path="/placements" element={<Placements />} />
           <Route path="/placement/:id" element={<PlacementDetail />} />
           <Route path="/company-visits" element={<CompanyVisits />} />
+          <Route path="/company-visit/:id" element={<CompanyVisitDetail />} />
 
 
         </Routes>

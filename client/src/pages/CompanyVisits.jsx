@@ -330,6 +330,14 @@ function CompanyVisits() {
                         year: "numeric",
                       })}
                     </div>
+                    {/* Read More Button */}
+                    <div className="mt-4 pt-4 border-t border-gray-200">
+                      <Link to={`/company-visit/${visit._id}`}>
+                        <button className="w-full bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition">
+                          📖 Read Full Details
+                        </button>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
