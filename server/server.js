@@ -27,12 +27,14 @@ const authRoutes = require('./routes/authRoutes');
 const placementRoutes = require('./routes/placementRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 const companyVisitRoutes = require('./routes/companyVisitRoutes');
+const superAdminRoutes = require('./routes/superAdminRoutes');
 
 // Use routes
 app.use('/api/auth', authRoutes);
 app.use('/api/placements', placementRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/company-visits', companyVisitRoutes);
+app.use('/api/superadmin', superAdminRoutes);
 
 
 

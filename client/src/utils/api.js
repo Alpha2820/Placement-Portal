@@ -12,8 +12,18 @@ export const registerAdmin = async (userData) => {
   return response.data;
 };
 
+export const registerSuperAdmin = async (userData) => {
+  const response = await axios.post(`${API_URL}/auth/register-superadmin`, userData);
+  return response.data;
+};
+
 export const loginUser = async (credentials) => {
   const response = await axios.post(`${API_URL}/auth/login`, credentials);
+  return response.data;
+};
+
+export const getCurrentUser = async () => {
+  const response = await axios.get(`${API_URL}/auth/me`);
   return response.data;
 };
 
@@ -81,5 +91,45 @@ export const deleteCompanyVisit = async (id) => {
 
 export const archiveCompanyVisit = async (id) => {
   const response = await axios.put(`${API_URL}/company-visits/${id}/archive`);
+  return response.data;
+};
+// Super Admin APIs
+export const getAllUsers = async () => {
+  const response = await axios.get(`${API_URL}/superadmin/users`);
+  return response.data;
+};
+
+export const getUserStats = async () => {
+  const response = await axios.get(`${API_URL}/superadmin/stats`);
+  return response.data;
+};
+
+export const getUserDetails = async (userId) => {
+  const response = await axios.get(`${API_URL}/superadmin/users/${userId}`);
+  return response.data;
+};
+
+export const makeAdmin = async (userId) => {
+  const response = await axios.put(`${API_URL}/superadmin/users/${userId}/make-admin`);
+  return response.data;
+};
+
+export const removeAdmin = async (userId) => {
+  const response = await axios.put(`${API_URL}/superadmin/users/${userId}/remove-admin`);
+  return response.data;
+};
+
+export const blockUser = async (userId) => {
+  const response = await axios.put(`${API_URL}/superadmin/users/${userId}/block`);
+  return response.data;
+};
+
+export const unblockUser = async (userId) => {
+  const response = await axios.put(`${API_URL}/superadmin/users/${userId}/unblock`);
+  return response.data;
+};
+
+export const deleteUser = async (userId) => {
+  const response = await axios.delete(`${API_URL}/superadmin/users/${userId}`);
   return response.data;
 };

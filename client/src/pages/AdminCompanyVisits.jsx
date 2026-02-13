@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { useNavigate, Link } from "react-router-dom";
+import SuperAdminSidebar from "../components/SuperAdminSidebar";
 import {
   getAllCompanyVisits,
   addCompanyVisit,
@@ -227,8 +228,8 @@ function AdminCompanyVisits() {
               </div>
             </div>
             
-            <div className="flex items-center gap-4">
-              <Link to="/admin">
+              <div className="flex items-center gap-4">
+              <Link to={user?.role === 'superadmin' ? '/superadmin/admins' : '/admin'}>
                 <button className="px-6 py-2.5 bg-slate-700 hover:bg-slate-600 text-white font-semibold rounded-xl shadow-lg transition">
                   ← Dashboard
                 </button>
@@ -532,6 +533,7 @@ function AdminCompanyVisits() {
                             📅 {visit.batch}
                           </span>
                         </div>
+                        <p className="text-sm text-gray-400">Posted by: <span className="text-white font-semibold">{visit.addedBy?.name || 'Unknown'}</span> <span className="text-gray-300">({visit.addedBy?.email || '—'})</span></p>
                       </div>
 
                       {/* Package and Info */}

@@ -31,13 +31,41 @@ const userSchema = new mongoose.Schema(
     },
     role: {
       type: String,
-      enum: ["student", "admin"],
+      enum: ["student", "admin", "superadmin"],
       default: "student",
     },
     verified: {
       type: Boolean,
       default: false,
     },
+    profilePhoto: {
+      type: String,
+      default: null,
+    },
+    isBlocked: {
+      type: Boolean,
+      default: false,
+    },
+    linkedin: {
+      type: String,
+      default: '',
+    },
+    github: {
+      type: String,
+      default: '',
+    },
+    portfolio: {
+      type: String,
+      default: '',
+    },
+    skills: {
+      type: String,
+      default: '',
+    },
+    bio: {
+      type: String,
+      default: '',
+    }
   },
   {
     timestamps: true,

@@ -30,7 +30,9 @@ function Login() {
       const data = await loginUser(formData);
       login(data.user, data.token);
       
-      if (data.user.role === 'admin') {
+      if (data.user.role === 'superadmin') {
+        navigate('/superadmin/admins');
+      } else if (data.user.role === 'admin') {
         navigate('/admin');
       } else {
         navigate('/dashboard');

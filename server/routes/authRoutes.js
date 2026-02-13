@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const authController = require('../controllers/authController');
+const { verifyToken } = require('../middleware/auth');
 
 // POST /api/auth/register
 router.post('/register', authController.register);
@@ -10,5 +11,11 @@ router.post('/register-admin', authController.registerAdmin);
 
 // POST /api/auth/login
 router.post('/login', authController.login);
+
+// Register super admin
+router.post('/register-superadmin', authController.registerSuperAdmin);
+
+// Get current user (requires authentication)
+router.get('/me', verifyToken, authController.getCurrentUser);
 
 module.exports = router;
